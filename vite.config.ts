@@ -1,10 +1,10 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import { resolve } from "path";
-import eslintPlugin from "vite-plugin-eslint";
-import legacy from "@vitejs/plugin-legacy";
-import vitePluginImp from "vite-plugin-imp";
-import { manualChunksPlugin } from "vite-plugin-webpackchunkname";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { resolve } from 'path'
+import eslintPlugin from 'vite-plugin-eslint'
+import legacy from '@vitejs/plugin-legacy'
+import vitePluginImp from 'vite-plugin-imp'
+import { manualChunksPlugin } from 'vite-plugin-webpackchunkname'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,25 +12,25 @@ export default defineConfig({
     react(),
     manualChunksPlugin(),
     legacy({
-      targets: ["defaults", "not IE 11"],
+      targets: ['defaults', 'not IE 11']
     }),
     vitePluginImp({
-      libList: [],
+      libList: []
     }),
-    eslintPlugin(),
+    eslintPlugin()
   ],
   esbuild: {
-    treeShaking: false,
+    treeShaking: false
   },
   build: {
-    cssTarget: ["chrome61"],
+    cssTarget: ['chrome61'],
     reportCompressedSize: false,
     sourcemap: false,
-    minify: "esbuild",
+    minify: 'esbuild'
   },
   resolve: {
     alias: {
-      "@": resolve(__dirname, "./src"),
-    },
-  },
-});
+      '@': resolve(__dirname, './src')
+    }
+  }
+})

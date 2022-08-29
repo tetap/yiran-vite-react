@@ -1,5 +1,7 @@
+import routes from '@/router'
+
 function App() {
-  return <div>App</div>
+  return <>{routes()}</>
 }
 
 export default App
