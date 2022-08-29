@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { i18n } from '@/locale'
 import { HttpStatusCode, HttpStatusMsg } from './httpStatusEnum'
 import type { BaseResponse } from '../models/BaseResponse'
 
@@ -14,7 +13,6 @@ const baseService = axios.create({
 // 请求拦截器
 baseService.interceptors.request.use(
   (config: any) => {
-    config.headers['language'] = i18n.resolvedLanguage
     return config
   },
   (error) => {
